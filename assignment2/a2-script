@@ -1,0 +1,134 @@
+Script started on Fri 14 Feb 2014 05:44:40 PM MST
+lingbo@ud09:~/Lingbo291/assignment2>sqlplus   lingbo   @a2-query.sql
+
+SQL*Plus: Release 11.1.0.6.0 - Production on Fri Feb 14 17:44:43 2014
+
+Copyright (c) 1982, 2007, Oracle.  All rights reserved.
+
+Enter password: 
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+Question 1 - lingbo
+
+SERIAL_NO
+---------------
+LA-34891
+SA-23420
+AB-25234
+LA-34892
+AB-29021
+CD-23849
+AB-45431
+AB-92487
+AB-93287
+AB-93282
+AB-93283
+
+SERIAL_NO
+---------------
+AB-93284
+
+12 rows selected.
+
+Question 2 - lingbo
+
+NAME
+----------------------------------------
+ADDR
+--------------------------------------------------
+Jack
+9025-104ave,Edmonton Alberta
+
+
+Question 3 - lingbo
+
+LICENCE_NO	NAME
+--------------- ----------------------------------------
+ABC-9125	Mary
+ABC-9292	Frank
+ABC-9494	Drangon
+BCD-9191	Tom
+CDE-9393	Dracky
+TCG-1026	Dark
+TCG-1028	Princess
+TCG-1029	Price
+TCG-1030	Landy
+
+9 rows selected.
+
+Question 4 - lingbo
+
+NAME
+----------------------------------------
+Frank
+Drangon
+Tom
+
+Question 5 - lingbo
+
+AVG(AUTO_SALE.PRICE) TYPE	      YEAR
+-------------------- ---------- ----------
+	       36991 SUV	      2009
+	       10089 Little	      2008
+	       32991 SUV	      2010
+	       18991 SUV	      2004
+	       10991 SUV	      2006
+	       10089 Little	      2009
+	     25960.5 Sedan	      2007
+	       28991 SUV	      2007
+	       48991 SUV	      2008
+	       38991 Sedan	      2009
+	       18991 Semi-truck       2010
+
+11 rows selected.
+
+Question 6 - lingbo
+
+NAME
+----------------------------------------
+Dark
+Laudi
+Linux
+Princess
+SB
+Type
+Unix
+
+7 rows selected.
+
+Question 7 - lingbo
+
+SIN		NAME
+--------------- ----------------------------------------
+ADDR
+--------------------------------------------------
+10010018	Dark
+3842-45ave,Calgary Alberta
+
+10010011	Tom
+3214-111ave,La California
+
+
+Question 8 - lingbo
+
+View created.
+
+Question 9 - lingbo
+
+NAME
+----------------------------------------
+Tamareial
+Princess
+SB
+Tom
+
+SQL> ^[[A^[[A^[[A^[[A                exit
+Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+lingbo@ud09:~/Lingbo291/assignment2>exit
+exit
+
+Script done on Fri 14 Feb 2014 05:45:12 PM MST

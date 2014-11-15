@@ -1,0 +1,152 @@
+CREATE TABLE Person 
+{
+	SIN INTEGER,
+	Name CHAR(20),
+	Gender CHAR(20),
+	Hight INTEGER,
+	Weight INTEGER,
+	Eye CHAR(20),
+	Hair CHAR(20),
+	PRIMARY KEY(SIN),
+};
+
+CREATE TABLE Licence
+{
+	Licence_number INTEGER,
+	Photo CHAR(20),
+	Issuing_date INTEGER,
+	Expiring_date INTEGER,
+	Address CHAR(50),
+	PRIMARY KEY(Licence_nubmer),
+};
+
+CREATE TABLE Operator's_Licence
+{
+	Licence_number INTEGER,
+	Photo CHAR(20),
+	Issuing_date INTEGER,
+	Expiring_date INTEGER,
+	Address CHAR(50),
+	Driving_Conditions CHAR(50),
+	Class CHAR(20),
+	PRIMARY KEY(Licence_number),
+};
+
+CREATE TABLE Non_op_Licence
+{
+	Licence_number INTEGER,
+	Photo CHAR(20),
+	Issuing_date INTEGER,
+	Expiring_date INTEGER,
+	Address CHAR(50),
+	PRIMARY KEY(Licence_number),
+};
+	
+CREATE TABLE Vehicle
+{
+	Series_Number INTEGER,	
+	Bod_color CHAR(20),
+	Maker CHAR(20),
+	Model CHAR(20),
+	Type CHAR(20),
+	Year INTEGER,
+	PRIMARY KEY(Series_Number),
+};
+
+CREATE TABLE Auto_Transaction
+{	
+	Invoice_number INTERGER,
+	Date CHAR(20),
+	Price FLOAT,
+	Register_Officer CHAR(20),
+	PRIMARY KEY(Invoice_number),
+};
+
+CREATE TABLE Violation_record
+{
+	Record_nubmer INTEGER,
+	Type CHAR(20),
+	Date CHAR(20),
+	Fine INTEGER,
+	Detail_comment CHAR(50),
+	PRIMARY KEY(Record_number)
+};
+
+CREATE TABLE Violation_tickets
+{
+	Ticket_Number INTEGER,
+	Police_Officer_Name CHAR(20),
+	Primary_Owner_Name CHAR(20),
+};
+
+CREATE TABLE Identified_by
+{
+	Licence_nubmer INTEGER,
+	SIN INTEGER,
+	PRIMARY KEY(Licence_Number,SIN),
+	FOREIGN KEY(Licence_number) REFERENCES Licence,
+	FOREIGN KEY(SIN) REFERENCES Person,
+};
+
+CREATE TABLE Own
+{
+	SIN INTEGER,
+	Series_number INTEGER,
+	PRIMARY KEY(SIN,Series_number),
+	FOREIGN KEY(SIN) REFERENCES Person,
+	FOREIGN KEY(Series_number) REFERENCES Vehicle,
+};
+
+CREATE TABLE Provided
+{
+	Series_number INTEGER,
+	Invoice_nubmer INTEGER,
+	PRIMARY KEY(Series_number,Invoice_number),
+	FOREIGN KEY(Series_number) REFERENCES Vehicle,
+	FOREIGN KEY(Invoice_nubmer) REFERENCES Auto_Transaction,
+};
+
+CREATE TABLE Involved
+{
+	Series_number INTEGER,
+	Record_nubmer INTEGER,
+	PRIMARY KEY(Series_number,Record_number),
+	FOREIGN KEY(Series_number) REFERENCES Vehicle,
+	FOREIGN KEY(Record_number) REFERENCES Violation_record,
+};
+
+CREATE TABLE Response
+{
+	SIN INTEGER,
+	Record_nubmer INTEGER,
+	PRIMARY KEY(SIN,Record_number),
+	FOREIGN KEY(SIN) REFERENCES Person,
+	FOREIGN KEY(Record_number) REFERENCES Violation_record,
+};
+
+CREATE TABLE Attached
+{
+	Record_nubmer INTEGER,
+	Ticket_Number INTEGER,
+	PRIMARY KEY(Record_number,Ticket_Number),
+	FOREIGN KEY(Record_number) REFERENCES Violation_record,
+	FOREIGN KEY(Ticket_number) REFERENCES Violation_tickets,
+};
+
+CREATE TABLE Business
+{
+	SIN INTEGER,
+	SIN INTEGER,
+	Invoice_number INTEGER,
+	PRIMARY KEY(SIN,SIN,Invoice_number),
+	FOREIGN KEY(SIN) REFERENCES Person,
+	FOREIGN KEY(SIN) REFERENCES Person,
+	FOREIGN KEY(Invoice_nubmer) REFERENCES Auto_Transaction,
+};
+
+CREATE TABLE isA
+{
+	Licence_number INTEGER,
+	PRIMARY KEY(Licence_number),
+	FOREIGN KEY(Licence_nubmer) REFERENCES Licence,
+};
