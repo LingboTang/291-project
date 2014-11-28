@@ -1,0 +1,36 @@
+** Free memory - Before Coalesce **
+Element size: 50
+Pointer to next element: 268501304
+Element size: 4
+Pointer to next element: 268501320
+Element size: 4
+Pointer to next element: 268501376
+Element size: 3
+Pointer to next element: 268501388
+Element size: 3
+Pointer to next element: 268501400
+Element size: 3
+Pointer to next element: 0
+** Busy memory - Before Coalesce **
+Element size: 25
+Pointer to next element: 268501292
+Element size: 3
+Pointer to next element: 268501336
+Element size: 10
+Pointer to next element: 0
+** Free memory - After Coalesce **
+Element size: 50
+Pointer to next element: 268501304
+Element size: 8
+Pointer to next element: 268501376
+Element size: 9
+Pointer to next element: 0
+** Busy memory - After Coalesce **
+Element size: 25
+Pointer to next element: 268501292
+Element size: 3
+Pointer to next element: 268501336
+Element size: 10
+Pointer to next element: 0
+
+Number of chunks coalesced: 3
